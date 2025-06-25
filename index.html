@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevSync - Task Collaboration Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>DevSync</h1>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <aside class="sidebar">
+        <h2>Boards</h2>
+        <ul id="boardList">
+          <li class="active">Personal</li>
+          <li>Work</li>
+          <li>Open Source</li>
+        </ul>
+        <button id="addBoard">+ Add Board</button>
+      </aside>
+
+      <section class="board-area">
+        <div class="board-columns">
+          <div class="column" data-status="todo">
+            <h3>To Do</h3>
+            <div class="task-list" id="todoTasks"></div>
+            <button class="add-task">+ Add Task</button>
+          </div>
+          <div class="column" data-status="doing">
+            <h3>Doing</h3>
+            <div class="task-list" id="doingTasks"></div>
+            <button class="add-task">+ Add Task</button>
+          </div>
+          <div class="column" data-status="done">
+            <h3>Done</h3>
+            <div class="task-list" id="doneTasks"></div>
+            <button class="add-task">+ Add Task</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <button id="exportData">Export JSON</button>
+      <input type="file" id="importData" accept="application/json">
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
